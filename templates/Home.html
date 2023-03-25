@@ -1,0 +1,532 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle&family=Fruktur&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+
+   
+    <title>Kaiser Schomstock</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/merica.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/HomePage/Home.css'%}">
+  </head>
+  <body>
+    <!-- Banner -->
+    <div class="banner">
+      <div class="banner-icon-wrapper text-left ">
+          <img class='banner-icon' src="{% static 'images/merica.png' %}" alt='american eagle' />
+      </div>
+      <div class="banner-icon-heading">
+          <h1>
+              <span class="appRed">*</span>
+              <span class="appRed">Kaisers</span>
+              <span class="appWhite ">'</span>
+              <span class="appBlue ">List</span> 
+              <span class="appBlue ">*</span>
+              <br/>
+              <span class="appRed">*</span> 
+              <span class="appRed">Thinking out</span>
+              <span class="appBlue">side</span>
+              <span class="appRed">the</span>
+              <span class="appRed">box</span>
+              <span class="appRed">.</span>
+              <span class="appWhite">.</span>
+              <span class="appBlue">.The Kaiser Way</span> 
+              <span class="appRed">.</span>
+              <span class="appBlue">..</span> 
+              <span class="appRed">*</span>
+              <br />
+              <span style="fontSize: 20">
+                  <span class="appRed">Terrorist</span> 
+                  <span class="appWhite ">Hate</span>
+                  <span class="appBlue "> this site</span>
+                  <span class="appRed">!</span> 
+              </span>
+          </h1>
+      </div>
+      <div class="banner-icon-wrapper text-right ">
+          <img class='banner-icon' src="{% static 'images/merica.png' %}" alt='american eagle' />
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class='navbar'>
+      <ul class='navbar-link-elements'>
+          <li>
+              <img  style="width:30px;"  class='banner-icon' src="{% static 'images/merica.png' %}" alt='american eagle' />
+          </li>
+          <li>About Kaiser's List</li>
+          <li>Business of the Week</li>
+          <li>MY COMMITMENT TO A FREE AMERICA </li>
+      </ul>
+    </nav>
+
+    <!-- Cities -->
+    <nav class="city-id">
+      <h1 class="city-heading">&#10024; Seattle - Tacoma &#10024;</h1>
+      <ul class="counties">
+          <li><button>Seattle</button></li>
+          <li><button>East-side</button></li>
+          <li><button>Snohomish</button></li>
+          <li><button>Kitsap</button></li>
+          <li><button>Tacoma</button></li>
+          <li><button>Olympia</button></li>
+          <li><button>South King Co.</button></li>
+      </ul>
+    </nav>
+
+    <!-- Main Contents -->
+    <div class='main-layout'>
+      <div class="left-sidebar">
+        <h2 class="leftbar-head">Kaiser's List</h2>
+
+        {% comment %} <div>
+          <h4 class="activities-calendar">Activities Calendar </h4>
+        </div> {% endcomment %}
+        <div class="my-calendar"></div>
+        <p class="msg-founder">Message from the founder</p>
+
+        <div class="youtube-videos">
+          <iframe
+            title="myVideo1"
+            width="96%"
+            height="auto"
+            src="https://www.youtube.com/embed/CCjdI03MNBQ"
+          ></iframe>
+        </div>
+
+        <p class="msg-founder">1234 567 89</p>
+
+        <div class="youtube-videos">
+          <iframe
+            title="myVideo1"
+            width="96%"
+            height="auto"
+            src="https://www.youtube.com/embed/CCjdI03MNBQ"
+          ></iframe>
+        </div>
+
+        <p class="msg-founder">Follow me !</p>
+        <div class="col-12 social-holder">
+          <a
+            class="btn btn-social-icon btn-instagram"
+            href="http://instagram.com/"
+          >
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a
+            class="btn btn-social-icon btn-facebook"
+            href="http://facebook.com/"
+          >
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a
+            class="btn btn-social-icon btn-twitter"
+            href="http://twitter.com/"
+          >
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a
+            class="btn btn-social-icon btn-google"
+            href="http://youtube.com/"
+          >
+            <i class="fa fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class='main-content'>
+        <section class='main-content-layout'>
+          <div>
+
+            <!-- Communities -->
+            <div class="card-list">
+              <h3>Communities</h3>
+              <div class="double-list-wrapper">
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Artists</a></li>      
+                    <li><a href="#">Child Care</a></li>  
+                    <li><a href="#">Classes</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">General</a></li>
+                    <li><a href="#">Groups</a></li>
+                    <li><a href="#">Local News</a></li>
+                    
+                  </ul>
+                </div>
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Lost N' Found</a></li>
+                    <li><a href="#">Missed Connections</a></li>
+                    <li><a href="#">Musicians</a></li>
+                    <li><a href="#">Pets</a></li>
+                    <li><a href="#">Pet</a></li>
+                    <li><a href="#">Politics</a></li>
+                    <li><a href="#">Rants N' Raves</a></li>
+                    <li><a href="#">Rideshare</a></li>
+                    <li><a href="#">Volunteers</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+             <!-- Services -->
+            <div class="card-list">
+              <h3>Services</h3>
+              <div class="double-list-wrapper">
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Automotive</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">Cell/mobile</a></li>
+                    <li><a href="#">Computer</a></li>
+                    <li><a href="#">Creative</a></li>
+                    <li><a href="#">Cycle</a></li>
+                    <li><a href="#">Event</a></li>
+                    <li><a href="#">Farm n' Garden</a></li>
+                    <li><a href="#">Financial</a></li>
+                    <li><a href="#">Health n' Wellness</a></li>
+                    <li><a href="#">Houselhold</a></li>
+                    
+                  </ul>
+                </div>
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Lost N' Found</a></li>
+                    <li><a href="#">Labor/move</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Lessons</a></li>
+                    <li><a href="#">Marine</a></li>
+                    <li><a href="#">Pet</a></li>
+                    <li><a href="#">Real Estate</a></li>
+                    <li><a href="#">Skilled Trade</a></li>
+                    <li><a href="#">Sm Buss Ads</a></li>
+                    <li><a href="#">Travel n' Vacations</a></li>
+                    <li><a href="#">Write/ed/tran</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Discussions -->
+            <div class="card-list">
+              <h3>Discussions</h3>
+              <div class="three-list-wrapper">
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Apple</a></li>
+                    <li><a href="#">Arts</a></li>
+                    <li><a href="#">Atheist</a></li>
+                    <li><a href="#">Autos</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">Bikes</a></li>
+                    <li><a href="#">Celebs</a></li>
+                    <li><a href="#">Comp</a></li>
+                    <li><a href="#">Cosmos</a></li>
+                    <li><a href="#">Diet</a></li>
+                    <li><a href="#">Divorce</a></li>
+                    <li><a href="#">Dying</a></li>
+                    <li><a href="#">Eco</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Film</a></li>
+                    <li><a href="#">Fixit</a></li>
+                    <li><a href="#">Food</a></li>
+                          
+                  </ul>
+                </div>
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Frugal</a></li>
+                    <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Garden</a></li>
+                    <li><a href="#">Haiku</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Housing</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Jokes</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Marriage</a></li>
+                    <li><a href="#">Manners</a></li>
+                    <li><a href="#">Money</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Open</a></li>
+                    <li><a href="#">Parents</a></li>
+                    <li><a href="#">Pets</a></li>
+                  </ul>
+                </div>
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Philosophy</a></li>
+                    <li><a href="#">Photo</a></li>
+                    <li><a href="#">Politics</a></li>
+                    <li><a href="#">Psychic</a></li>
+                    <li><a href="#">Recover</a></li>
+                    <li><a href="#">Religion</a></li>
+                    <li><a href="#">Rofo</a></li>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Spirit</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Super</a></li>
+                    <li><a href="#">Tax</a></li>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Tv</a></li>
+                    <li><a href="#">Vegan</a></li>
+                    <li><a href="#">Words</a></li>
+                    <li><a href="#">Writing</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <div>
+            <!-- Housing -->
+            <div class="card-list">
+              <h3>Housing</h3>
+              <div class="single-list-wrapper">
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Apts N' Houses</a></li>
+                    <li><a href="#">Housing Swap</a></li>
+                    <li><a href="#">Office , Commercial</a></li>
+                    <li><a href="#">Parking , Storage</a></li>
+                    <li><a href="#">Real estate 4 Sale</a></li>
+                    <li><a href="#">Rooms N' Shared</a></li>
+                    <li><a href="#">Rooms Wanted</a></li>
+                    <li><a href="#">Sublets N' Temporary</a></li>
+                    <li><a href="#">Vacation rentals</a></li>
+                          
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Yard Scale! -->
+            <div class="card-list">
+              <h3>Yard Scale!</h3>
+              <div class="double-list-wrapper">
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Antiques</a></li>
+                    <li><a href="#">Appliances</a></li>
+                    <li><a href="#">Arts N' Crafts</a></li>
+                    <li><a href="#">Atv , Utv , Sno</a></li>
+                    <li><a href="#">Autoparts</a></li>
+                    <li><a href="#">Aviation</a></li>
+                    <li><a href="#">Baby N' Kids</a></li>
+                    <li><a href="#">Barter</a></li>
+                    <li><a href="#">Beauty N' health</a></li>
+                    <li><a href="#">Bike Parts</a></li>
+                    <li><a href="#">Bikes</a></li>
+                    <li><a href="#">Boat Parts</a></li>
+                    <li><a href="#">Boats</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Cars N' Trucks</a></li>
+                    <li><a href="#">Cds , Dvds , Vhs</a></li>
+                    <li><a href="#">Cell phones</a></li>
+                    <li><a href="#">Clothes N' Accesories</a></li>
+                    <li><a href="#">Collectibles </a></li>
+                    <li><a href="#">Computer Parts</a></li>
+                    <li><a href="#">Electronics</a></li>
+                          
+                  </ul>
+                </div>
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Farm N' Garden</a></li>
+                    <li><a href="#">Free</a></li>
+                    <li><a href="#">Furniture</a></li>
+                    <li><a href="#">Garage Sale</a></li>
+                    <li><a href="#">General</a></li>
+                    <li><a href="#">Heavy Equipment</a></li>
+                    <li><a href="#">Household</a></li>
+                    <li><a href="#">Jewelry</a></li>
+                    <li><a href="#">Materials</a></li>
+                    <li><a href="#">Motorcycle Parts</a></li>
+                    <li><a href="#">Motorcycles</a></li>
+                    <li><a href="#">Music Instruments</a></li>
+                    <li><a href="#">Photo N' Video</a></li>
+                    <li><a href="#">Rvs N' Camp</a></li>
+                    <li><a href="#">Sporting</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Tools</a></li>
+                    <li><a href="#">Toys N' Games</a></li>
+                    <li><a href="#">Trailers</a></li>
+                    <li><a href="#">Video gaming</a></li>
+                    <li><a href="#">Wanted</a></li>
+                    <li><a href="#">Wheels N' Tires</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Yard Scale! -->
+            <div class="card-list">
+              <h3>Resumes</h3>
+            </div>
+
+          </div>
+          <div>
+            <!-- Jobs -->
+            <div class="card-list">
+              <h3>Jobs</h3>
+              <div class="single-list-wrapper">
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Accounting N' Finance</a></li>
+                    <li><a href="#">Admin N' Office</a></li>
+                    <li><a href="#">Arch N' Engineering</a></li>
+                    <li><a href="#">Art , Media , Design</a></li>
+                    <li><a href="#">Biotech , Science</a></li>
+                    <li><a href="#">Business , Management</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Etc , Misc</a></li>
+                    <li><a href="#">RESTAURANTS AND BARS</a></li>
+                    <li><a href="#">General Labor</a></li>
+                    <li><a href="#">Government</a></li>
+                    <li><a href="#">Human Resources</a></li>
+                    <li><a href="#">Legal , Paralegal</a></li>
+                    <li><a href="#">Manufacturing</a></li>
+                    <li><a href="#">Marketing , PR , Ad</a></li>
+                    <li><a href="#">Medical , Health</a></li>
+                    <li><a href="#">Nonprofit Sector</a></li>
+                    <li><a href="#">Real Estate</a></li>
+                    <li><a href="#">Retail , Wholesale</a></li>
+                    <li><a href="#">Sales , Biz Dev </a></li>
+                    <li><a href="#">Salon , Spa , Fitness</a></li>
+                    <li><a href="#">Security </a></li>
+                    <li><a href="#">Software , QA , DBA</a></li>
+                    <li><a href="#">Skilled Trade , Craft</a></li>
+                    <li><a href="#">Systems Network </a></li>
+                    <li><a href="#">Technical Support</a></li>
+                    <li><a href="#">Transport</a></li>
+                    <li><a href="#">TV , Film , Video</a></li>
+                    <li><a href="#">Web , Info , Design</a></li>
+                    <li><a href="#">Writing , Editing </a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Gigs -->
+            <div class="card-list">
+              <h3>Gigs</h3>
+              <div class="double-list-wrapper">
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Computer</a></li>
+                    <li><a href="#">Creative</a></li>
+                    <li><a href="#">Crew</a></li>
+                    <li><a href="#">Domestic</a></li>
+                  </ul>
+                </div>
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Event</a></li>
+                    <li><a href="#">Labor</a></li>
+                    <li><a href="#">Talent</a></li>
+                    <li><a href="#">Writing</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Personals -->
+            <div class="card-list">
+              <h3>Personals</h3>
+              <div class="single-list-wrapper">
+                <div class="list-part">
+                  <ul class="ul-list">
+                    <li><a href="#">Serious-ish</a></li>
+                    <li><a href="#">Casual thingy</a></li>
+                    <li><a href="#">Hey u , yes U</a></li>
+                    <li><a href="#">Platonika</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </section>
+      </div>
+      <div class="right-sidebar">
+          <h2 class="text-center head-right-sidebar mt-4">' Round</h2>
+          <ul class="right-sidebar-list">
+            <li>
+              <a href="#">Olympia</a>
+            </li>
+            <li>
+              <a href="#">Spokane</a>
+            </li>
+            <li>
+              <a href="#">Bellingham</a>
+            </li>
+            <li>
+              <a href="#">Vancouver,B.C</a>
+            </li>
+            <li>
+              <a href="#">Portland , Or</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="app-footer">
+      <p>&copy; Battlegriffin </p>
+      <p>2021</p>
+      <p>Made with Love , Pride & Power by</p>
+      <p>Kaiser Schomstock</p>
+      <p>Bellevue , Washington State , United States of America .</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+  </body>
+</html>

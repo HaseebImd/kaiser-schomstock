@@ -1,0 +1,389 @@
+:root {
+  --app-red: #fa6676;
+  --app-blue: #66e0fa;
+  --app-white: #e1f7fb;
+  --app-info: #17a2b8;
+  --app-warning: #ffc107;
+  --app-dark: #343a40;
+  --b-r-main-layout: 15px;
+}
+
+.banner {
+  min-height: 170px;
+  background: black;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-icon-heading {
+  color: white;
+  text-align: center;
+  font-family: lobster-italic;
+  font-weight: 400;
+}
+
+.banner-icon-heading h1 {
+  font-weight: bold;
+}
+
+.banner-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  /* align the image inside in the center horizonatlly */
+  align-items: center;
+  /* align the image inside in the center vertically */
+}
+
+.banner-icon {
+  width: 100px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.navbar {
+  min-height: 75px;
+  width: 70%;
+  border-radius: 100px;
+  background-color: #bb495b;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.navbar-link-elements {
+  color: white;
+  list-style: none;
+  min-height: inherit;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-link-elements li {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Dongle", sans-serif;
+  font-size: 25px;
+}
+
+.city-id {
+  background-color: #800080;
+  margin: 0 auto;
+  margin-top: 10px;
+  min-height: 60px;
+  width: 60%;
+  border-radius: 100px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.city-heading {
+  font-size: 40px;
+  color: var(--app-red);
+  font-family: lobster-italic;
+  font-weight: bold;
+}
+
+.counties {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.counties li {
+  display: inline-block;
+}
+
+.counties li button {
+  border-radius: 5px;
+  background-color: #ba55d3;
+  padding: 5px;
+  margin: auto 5px;
+  color: #fad02c;
+  border: 1px solid black;
+}
+
+.main-layout {
+  display: flex;
+  min-height: 400px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.left-sidebar {
+  width: 196px;
+  border-radius: var(--b-r-main-layout);
+  background-color: var(--app-dark);
+}
+
+.leftbar-head {
+  font-family: "Indie Flower";
+  color: var(--app-info);
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.main-content {
+}
+
+.right-sidebar-list {
+  list-style: none;
+}
+
+.right-sidebar-list li {
+  text-align: center;
+}
+
+.right-sidebar-list li a {
+  color: var(--app-warning);
+  font-family: "Architects Daughter";
+  font-size: 13.8px;
+}
+
+.right-sidebar {
+  width: 112px;
+  background-color: var(--app-dark);
+  border-radius: var(--b-r-main-layout);
+}
+
+.head-right-sidebar {
+  color: var(--app-info);
+  font-size: 20px;
+  font-family: "Architects Daughter";
+}
+
+.activities-calendar {
+  font-family: "Architects Daughter";
+  color: var(--app-warning);
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.react-datepicker {
+  transform: scale(0.7);
+  margin-left: -22px;
+  background: var(--app-blue) !important;
+}
+
+.react-datepicker__header {
+  background-color: var(--app-red) !important;
+}
+
+.msg-founder {
+  font-family: "Architects Daughter";
+  color: var(--app-warning);
+  font-size: 13.5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.youtube-videos {
+  text-align: center;
+}
+
+.social-holder {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.card-list {
+  width: 100%;
+}
+
+.card-list h3 {
+  background-color: var(--app-info);
+  border-radius: 7px;
+  text-align: center;
+  font-size: 26px;
+  font-family: "Architects Daughter";
+  font-style: bold;
+  margin-top: 10px;
+}
+
+.ul-list {
+  list-style: none;
+  font-family: "Indie Flower";
+  font-size: 19px;
+  margin: 0;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.ul-list li:not(:first-child) {
+  border-top: 1px solid var(--app-blue);
+  padding: 5px 0;
+}
+
+.ul-list li a {
+  text-decoration: none;
+  color: var(--app-warning);
+  /* word-break: break-all; */
+}
+
+.list-part {
+}
+
+.single-list-wrapper {
+  background-color: var(--app-dark);
+  border-radius: 8px;
+}
+
+.double-list-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--app-dark);
+  border-radius: 8px;
+}
+.three-list-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: var(--app-dark);
+  border-radius: 8px;
+}
+
+.three-list-wrapper a {
+  font-size: 16px;
+}
+
+.main-content-layout {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: grid;
+  grid-template-columns: 240px 235px 170px;
+  grid-gap: 10px;
+}
+
+.app-footer {
+  background-color: black;
+  min-height: 50px;
+  color: var(--app-warning);
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-family: "Dongle";
+  font-size: 23px;
+}
+
+.app-footer > p {
+  margin: 0;
+  line-height: 1;
+}
+
+.modal-underlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.kl-modal-body {
+  background-color: var(--app-red);
+  width: 1000px;
+  height: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: var(--b-r-main-layout);
+  overflow: auto;
+  font-family: Dongle;
+  line-height: 1;
+  font-size: 18.8px;
+}
+
+.kl-modal-header {
+  background-color: var(--app-dark);
+  font-family: "Architects Daughter";
+  color: var(--app-warning);
+  text-align: center;
+  font-size: 30px;
+}
+
+.kl-modal-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.kl-close-modal-button {
+  float: right;
+  padding: 8px 20px;
+  background-color: var(--app-dark);
+  border-radius: 15px;
+  color: var(--app-warning);
+  margin-right: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.kl-modal-close-floating-button {
+  float: right;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  margin-right: 20px;
+  font-family: "Dongle";
+  font-size: 25px;
+  color: var(--app-red);
+  font-weight: bold;
+  border-radius: 100%;
+  border: 1px solid var(--app-warning);
+  height: 28px;
+  width: 28px;
+  margin-top: 4px;
+}
+
+.admin-wrapper {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+}
+
+.banner {
+	min-height: 170px;
+	background: black;
+	display: flex;
+	justify-content: center;
+}
+
+.banner-icon-heading {
+	color: white;
+	text-align: center;
+	font-family: lobster-italic;
+	font-weight: 400;
+}
+
+.banner-icon-heading h1 {
+	font-weight: bold;
+}
+
+.banner-icon-wrapper {
+	display: flex;
+	justify-content: center;
+	/* align the image inside in the center horizonatlly */
+	align-items: center;
+	/* align the image inside in the center vertically */
+}
+
+.banner-icon {
+	width: 100px;
+}
+
+.appRed{
+  color:#FA6676;
+}
+
+
+.appWhite{
+  color:#E1F7FB;
+}
+.appBlue{
+  color:#66E0FA;
+}

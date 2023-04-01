@@ -1,0 +1,421 @@
+{% extends 'jobs/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <h5 class="text-center mb-4">Create a new Job</h5>
+    <form class="row g-3" action="/create-new-job" method="POST" enctype="multipart/form-data">
+         {% csrf_token %}
+        <div class="col-md-6">
+            <label for="city" class="form-label">City *</label>
+            <select id="city" name="city" class="form-select" required>
+                <option value="">Please select a City</option>
+                <option value="seattle">seattle</option>
+                <option value="eastside">eastside</option>
+                <option value="snohomish county">snohomish county</option>
+                <option value="kitsap west puget">kitsap / west puget</option>
+                <option value="tacoma pierce">tacoma / pierce</option>
+                <option value="olympia thurston">olympia / thurston</option>
+                <option value="south king co">south king co</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="category" class="form-label">Category *</label>
+            <select id="category" name="category" class="form-select">
+                <option value="">Please select a Category</option>
+                <option value="Accounting_N_Finance">Accounting N' Finance</option>
+                <option value="Admin_N_Office">Admin N' Office</option>
+                <option value="Arch_N_Engineering">Arch N' Engineering</option>
+                <option value="Art_Media_Design">Art , Media , Design</option>
+                <option value="Biotech_Science">Biotech , Science</option>
+                <option value="Business_Management">Business , Management</option>
+                <option value="Customer_Service">Customer Service</option>
+                <option value="Education">Education</option>
+                <option value="Etc_Misc">Etc , Misc</option>
+                <option value="RESTAURANTS_AND_BARS">RESTAURANTS AND BARS</option>
+                <option value="General_Labor">General Labor</option>
+                <option value="Government">Government</option>
+                <option value="Human_Resources">Human Resources</option>
+                <option value="Legal_Paralegal">Legal , Paralegal</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Marketing_PR_Ad">Marketing , PR , Ad</option>
+                <option value="Medical_Health">Medical , Health</option>
+                <option value="Nonprofit_Sector">Nonprofit Sector</option>
+                <option value="Real_Estate">Real Estate</option>
+                <option value="Retail_Wholesale">Retail , Wholesale</option>
+                <option value="Sales_Biz_Dev">Sales , Biz Dev </option>
+                <option value="Salon_Spa_Fitness">Salon , Spa , Fitness</option>
+                <option value="Security">Security </option>
+                <option value="Software_QA_DBA">Software , QA , DBA</option>
+                <option value="Skilled_Trade_Craft">Skilled Trade , Craft</option>
+                <option value="Systems_Network">Systems Network </option>
+                <option value="Technical_Support">Technical Support</option>
+                <option value="Transport">Transport</option>
+                <option value="TV_Film_Video">TV , Film , Video</option>
+                <option value="Web_Info_Design">Web , Info , Design</option>
+                <option value="Writing_Editing">Writing , Editing </option>
+                
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="postingtitle" class="form-label">Posting Title *</label>
+            <input type="text" class="form-control" id="postingtitle" name="postingtitle" placeholder="Please provide Posting Title" required>
+        </div>
+        <div class="col-md-4">
+            <label for="neighborhood" class="form-label">Neighborhood</label>
+            <input type="text" class="form-control" id="neighborhood" name="neighborhood" placeholder="Please provide Neighborhood">
+        </div>
+        <div class="col-md-2">
+            <label for="postalcode" class="form-label">Postal Code *</label>
+            <input type="text" class="form-control" id="postalcode" name="postalcode" placeholder="Provide Postal Code" required>
+        </div>
+        <hr>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="form-label">Description (Only one job description per posting please.)</label>
+                <textarea id="full-featured" name="description" name="description" required>
+                </textarea>
+            </div>
+        </div>
+        <hr>
+        <div class="col-md-6">
+            <label for="employementType" class="form-label">Employment Type</label>
+            <select id="employementType" name="employementType" class="form-select">
+                <option value="">Choose Employment Type</option>
+                <option value="seattle">Full Time</option>
+                <option value="eastside">Part Time</option>
+                <option value="snohomish county">Contract</option>
+                <option value="kitsap west puget">Employee's Choice</option>
+            </select>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4 column mt-5">
+            <div class="col-md-12">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="contact_by_rec" name="contact_by_rec">
+                <label class="form-check-label" for="contact_by_rec ">
+                    direct contact by recruiters is ok
+                </label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="internship" name="internship">
+                <label class="form-check-label" for="internship">
+                    internship
+                </label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="non_profit_org" name="non_profit_org">
+                <label class="form-check-label" for="non_profit_org">
+                    non-profit organization
+                </label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="relocation" name="relocation"> 
+                <label class="form-check-label" for="relocation">
+                    relocation assistance available
+                </label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="telecon" name="telecon">
+                <label class="form-check-label" for="telecon">
+                    telecommuting ok
+                </label>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="col-md-12">
+            <label for="jobTitle" class="form-label">Job Title *</label>
+            <input type="text" class="form-control" id="jobTitle" name="jobTitle" placeholder="Pleae provide Job Title" required>
+        </div>
+        <div class="col-md-12">
+            <label for="compensation" class="form-label">Compensation *</label>
+            <input type="text" class="form-control" id="compensation" name="compensation" placeholder="Please provide Compensation" required>
+        </div>
+        <div class="col-md-12">
+            <label for="companyName" class="form-label">Company Name</label>
+            <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Please provide Company name">
+        </div>
+        <hr>
+        <div class="col-md-4 column">
+            <div class="col-md-12">
+                <label for="emailAddress" class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="Please provide Email Address" required>
+            </div>
+            <p>Email Privacy Option</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailPrivacy" id="flexRadioDefault1" checked >
+                <label class="form-check-label" for="flexRadioDefault1">
+                    CL mail relay (recommended)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailPrivacy" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    show my real email addres
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailPrivacy" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    no replies to this email
+                </label>
+            </div>
+        </div>
+        <div class="col-md-8 column mt-5">
+            <div class="row col-md-12">
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="showPhone">
+                        <label class="form-check-label" for="showPhone" name="showPhone">
+                            Show my Phone Number
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="phoneCalls" name="phoneCalls">
+                        <label class="form-check-label" for="phoneCalls">
+                            Phone Calls ok 
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="textSms" name="textSms">
+                        <label class="form-check-label" for="textSms">
+                            Text/SMS ok 
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row col-md-12">
+                <div class="col-md-6">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Provide Phone Number">
+                </div> 
+                <div class="col-md-6">
+                    <label for="contactName" class="form-label">Contact Name</label>
+                    <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Provide Contact Name">
+                </div>          
+            </div>
+        </div>
+        <hr>
+        <div class="col-md-12">
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="showAddress" name="showAddress">
+            <label class="form-check-label" for="showAddress">
+                Show Address
+            </label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="street" class="form-label">Street</label>
+            <input type="text" class="form-control" id="street" name="street" placeholder="Provide Street name">
+        </div>
+        <div class="col-md-4">
+            <label for="crossStreet" class="form-label">Cross Street</label>
+            <input type="text" class="form-control" id="crossStreet" name="crossStreet" placeholder="Provide Cross Street name">
+        </div>
+        <div class="col-md-4">
+            <label for="cityName" class="form-label">City</label>
+            <input type="text" class="form-control" id="cityName" name="cityName" placeholder="Provide City Name">
+        </div>
+        <hr>
+        <div class="container">
+            <div class="text-center">
+            <!-- Input element to choose images -->
+            <input type="file" id="select-image" name='images' multiple accept="image/*">
+            <label for="select-image">
+                <?xml version="1.0" ?><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1344 1472q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm256 0q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm128-224v320q0 40-28 68t-68 28h-1472q-40 0-68-28t-28-68v-320q0-40 28-68t68-28h427q21 56 70.5 92t110.5 36h256q61 0 110.5-36t70.5-92h427q40 0 68 28t28 68zm-325-648q-17 40-59 40h-256v448q0 26-19 45t-45 19h-256q-26 0-45-19t-19-45v-448h-256q-42 0-59-40-17-39 14-69l448-448q18-19 45-19t45 19l448 448q31 30 14 69z" />
+                </svg>
+                <b class="text-success">Choose Images</b>
+            </label>
+            <div class="preview_image">
+                <!-- It will show the total number of files selected -->
+                <p ><b class="text-info"><span id="total-images">0</span> File(s) Selected<b/></p>
+
+                <!-- All images will display inside this div -->
+                <div id="images"></div>
+            </div>
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="submit" id="continueBtn" >Continue</button>
+        </div>
+        {% comment %} <button  type="submit" id="submitBtn">Submit</button> {% endcomment %}
+    </form>
+
+
+    <button type="button" hidden class="btn btn-primary" id="toastbtn">Show Toast</button>
+    <div class="toast position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+        <strong class="me-auto text-danger">Wait 🖐!!!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body text-dark">
+            <p id="toastBody"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById("toastbtn").onclick = function() {
+  var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+  var toastList = toastElList.map(function(toastEl) {
+    return new bootstrap.Toast(toastEl)
+  })
+  toastList.forEach(toast => toast.show()) 
+}
+</script>
+
+</div>
+
+{% endblock %}
+
+{% block extra_needed_js %}
+
+<script>
+   tinymce.init({
+        selector: 'textarea#full-featured',
+        plugins: ' preview  importcss  searchreplace autolink autosave save directionality  visualblocks visualchars fullscreen image link media  template codesample table charmap  pagebreak nonbreaking anchor  insertdatetime advlist lists  wordcount    help   charmap   quickbars  emoticons',
+
+        mobile: {
+            plugins: ' preview importcss  searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media  template codesample table charmap pagebreak nonbreaking anchor  insertdatetime advlist lists  wordcount    help   charmap  quickbars  emoticons '
+        },
+        
+        menu: {
+            tc: {
+            title: 'Comments',
+            items: 'addcomment showcomments deleteallconversations'
+            }
+        },
+        menubar: 'file edit view insert format tools table tc help',
+        toolbar: 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange  removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+        autosave_ask_before_unload: true,
+        autosave_interval: '30s',
+        autosave_prefix: '{path}{query}-{id}-',
+        autosave_restore_when_empty: false,
+        autosave_retention: '2m',
+        image_advtab: true,
+        link_list: [
+            { title: 'My page 1', value: 'https://www.tiny.cloud' },
+            { title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_list: [
+            { title: 'My page 1', value: 'https://www.tiny.cloud' },
+            { title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_class_list: [
+            { title: 'None', value: '' },
+            { title: 'Some class', value: 'class-name' }
+        ],
+        importcss_append: true,
+        templates: [
+                { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+            { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+            { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+        ],
+        template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+        height: 600,
+        image_caption: true,
+        quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+        noneditable_noneditable_class: 'mceNonEditable',
+        toolbar_mode: 'sliding',
+        spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
+       
+        content_style: '.mymention{ color: gray; }',
+        contextmenu: 'link image table configurepermanentpen',
+        a11y_advanced_options: true,
+        image_title: true,
+        automatic_uploads: true,
+        file_picker_types: 'image',
+        nonbreaking_force_tab: true,
+
+        file_picker_callback: function (cb, value, meta) {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+
+            input.onchange = function () {
+            var file = this.files[0];
+
+            var reader = new FileReader();
+            reader.onload = function () {
+                var id = 'blobid' + (new Date()).getTime();
+                var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+                var base64 = reader.result.split(',')[1];
+                var blobInfo = blobCache.create(id, file, base64);
+                blobCache.add(blobInfo);
+
+              
+                cb(blobInfo.blobUri(), { title: file.name });
+            };
+            reader.readAsDataURL(file);
+            };
+
+            input.click();
+        },
+
+}); 
+</script>
+
+<script>
+    const fileInput = document.getElementById('select-image');
+    const images = document.getElementById('images');
+    const totalImages = document.getElementById('total-images');
+// Listen to the change event on the <input> element
+    fileInput.addEventListener('change', (event) => {
+        // Get the selected image file
+        const imageFiles = event.target.files;
+
+        // Show the number of images selected
+        totalImages.innerText = imageFiles.length;
+
+        // Empty the images div
+        images.innerHTML = '';
+
+        if (imageFiles.length > 0) {
+            // Loop through all the selected images
+            for (const imageFile of imageFiles) {
+                const reader = new FileReader();
+
+                // Convert each image file to a string
+                reader.readAsDataURL(imageFile);
+                // FileReader will emit the load event when the data URL is ready
+                // Access the string using reader.result inside the callback function
+                reader.addEventListener('load', () => {
+                    // Create new <img> element and add it to the DOM
+                    images.innerHTML += `
+                    <div class="image_box">
+                        <img src='${reader.result}' style="height:100px;width:100px;">
+                    </div>
+                `;
+                });
+            }
+        } else {
+            // Empty the images div
+            images.innerHTML = '';
+        }
+    });
+</script>
+
+
+
+<script src="{% static 'js/jobs/newJob.js' %}"></script>
+
+{% endblock extra_needed_js %}

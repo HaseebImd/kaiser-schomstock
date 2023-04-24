@@ -387,3 +387,12 @@
 .appBlue{
   color:#66E0FA;
 }
+.b{
+    background-color:#262626;
+    color:bisque
+}
+
+#map {
+    height: 100px;
+    width: 100%;
+  }

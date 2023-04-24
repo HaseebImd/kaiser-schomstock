@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">KL</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"
+            ><span style="color: #ffc107">Home</span></a
+          >
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/create-new-job"
+              ><span style="color: #ffc107">New Post</span></a
+            >
+          </li>
+        {% if request.session.email %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/dashboard"
+            ><span style="color: #ffc107">Dashobard</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/logout"
+            ><span style="color: #ffc107">Logout</span></a
+          >
+        </li>
+        {% else %}
+        {% endif %}
+        
+      </ul>
+    </div>
+  </div>
+</nav>

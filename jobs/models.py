@@ -38,6 +38,8 @@ class Jobs(models.Model):
     streetName      = models.CharField(max_length=255,blank=True, null=True)
     crossStreet     = models.CharField(max_length=255,blank=True, null=True)
     cityAddress     = models.CharField(max_length=255,blank=True, null=True)
+
+    status          = models.BooleanField(default=False)
     createdat = models.DateTimeField(
         db_column='createdAt', blank=True, null=True, auto_now_add=True)
     # Field name made lowercase.

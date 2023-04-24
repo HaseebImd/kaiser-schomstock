@@ -1,47 +1,114 @@
 {% extends 'jobs/base.html' %}
-{% comment %} {% load static %} {% endcomment %}
+{% load static %}
 
 {% block content %}
+{% include "jobs/navbar.html" %}
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">KL</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <div class="d-flex" role="search">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="create-new-job">Post</a>
-            </li>
-        </ul>
+
+<div class="container mt-3">
+  <form action="{% url 'job-search' %}" method="POST">
+     {% csrf_token %}
+    <div class="row">
+      <div class="col-md-11 mb-2">
+          <input type="text" class="form-control field" id="postalcode" name="postalcode" value="{{query}}" placeholder="Search Admin/Office">
+      </div>
+      <div class="col-md-1">
+        <button type="submit" class="btn btn-info">Search</button>
       </div>
     </div>
+  </form>
+  <div class="row mt-5 mb-3">
+    <div class="col-md-2">
+      <select class="form-select" aria-label=".form-select-sm example" id="viewType" onchange="changeJobsView();">
+        <option value="list">List</option>
+        <option value="thumb">Thumb</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
-</nav>
+  <hr>
+  <div id="listDisplay">
+    {% if jobs %}
+    {% for job in jobs %}
+    <div class="row">
+      <div class="col-md-1">
+        <img src="https://www.iconpacks.net/icons/2/free-favourite-icon-2765-thumb.png" style="height:30px;width:30px" />
+      </div>
+      <div class="col-md-11">
+        <p><a href={% url 'jobs/job-details' id=job.id %}>{{job.postTitle}}</a>  &nbsp;&nbsp; {{job.compensation}} &nbsp;&nbsp; {{job.Neighborhood}} &nbsp;&nbsp;  {{ job.createdat|date:"F d, Y" }}</p>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No posts are available.</p>
+    {% endif %}
+  </div>
+  <div id="thumbDisplay" style="display: none;">
+    {% if jobs %}
+    {% for job in jobs %}
+    <div class="row">
+      {% if job.picture %}
+      <div class="col-md-1">
+        <img src="{{job.picture.url}}" alt="Girl in a jacket" width="50" height="50">
+      </div>
+      {% else %}
+      <div class="col-md-1">
+        <img src="{% static 'images/default/default.png'%}" alt="Girl in a jacket" width="50" height="50">
+      </div>
+      {% endif %}
+      <div class="col-md-11" style="margin-left:-32px;">
+        <p>
+          {{job.city}} <br>
+          <a href={% url 'jobs/job-details' id=job.id %}>{{job.postTitle}}</a> <br>
+          {{ job.createdat|date:"F d, Y" }} &nbsp;&nbsp; {{job.compensation}} &nbsp;&nbsp; {{job.Neighborhood}}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No posts are available.</p>
+    {% endif %}
+  </div>
+  
+</div>
 
 
 {% endblock %}
+
+
+{% block extra_needed_js %}
+
+<script>
+  function changeJobsView()
+  {
+    var viewID=document.getElementById("viewType").value;
+    if(viewID=='list')
+    {
+      document.getElementById("listDisplay").style.display="block";
+      document.getElementById("thumbDisplay").style.display="none";
+    }
+    else
+    {
+      document.getElementById("listDisplay").style.display="none";
+      document.getElementById("thumbDisplay").style.display="block";
+    }
+  }
+</script>
+
+{% endblock extra_needed_js %}

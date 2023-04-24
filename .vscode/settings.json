@@ -2,5 +2,6 @@
     "cSpell.words": [
         "Schomstock",
         "tinymce"
-    ]
+    ],
+    "r.lsp.promptToInstall": false
 }

@@ -4,6 +4,7 @@
 {% block content %}
 
 <div class="container mt-5 mb-5">
+    <a class="btn btn-outline-primary" href="{{ request.META.HTTP_REFERER }}" role="button">Go Back</a>
     <h5 class="text-center mb-4">Create a new Job</h5>
     <form class="row g-3" action="/create-new-job" method="POST" enctype="multipart/form-data">
          {% csrf_token %}
@@ -71,10 +72,10 @@
             <input type="text" class="form-control" id="postalcode" name="postalcode" placeholder="Provide Postal Code" required>
         </div>
         <hr>
-        <div class="col-md-12">
+        <div class="col-md-12" id="postingBody">
             <div class="form-group">
                 <label class="form-label">Description (Only one job description per posting please.)</label>
-                <textarea id="full-featured" name="description" name="description" required>
+                <textarea id="full-featured" name="description">
                 </textarea>
             </div>
         </div>
@@ -83,10 +84,10 @@
             <label for="employementType" class="form-label">Employment Type</label>
             <select id="employementType" name="employementType" class="form-select">
                 <option value="">Choose Employment Type</option>
-                <option value="seattle">Full Time</option>
-                <option value="eastside">Part Time</option>
-                <option value="snohomish county">Contract</option>
-                <option value="kitsap west puget">Employee's Choice</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Contract">Contract</option>
+                <option value="Employee Choice">Employee's Choice</option>
             </select>
         </div>
         <div class="col-md-2"></div>
@@ -245,19 +246,23 @@
             </label>
             <div class="preview_image">
                 <!-- It will show the total number of files selected -->
-                <p ><b class="text-info"><span id="total-images">0</span> File(s) Selected<b/></p>
+                <p style="color:bisque"><b><span id="total-images">0</span> File(s) Selected<b/></p>
 
                 <!-- All images will display inside this div -->
                 <div id="images"></div>
             </div>
             </div>
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="submit" id="continueBtn" >Continue</button>
+        <div class="row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" id="OpenmodalButton" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" >Preview Post Sample</button>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-outline-primary" type="button" onclick="CheckRequiredFields()" id="continueBtn" >Publish Post</button>
+            </div>
         </div>
-        {% comment %} <button  type="submit" id="submitBtn">Submit</button> {% endcomment %}
+        <button  type="submit" style="display:none;" id="submitBtn">Submit</button>
     </form>
-
 
     <button type="button" hidden class="btn btn-primary" id="toastbtn">Show Toast</button>
     <div class="toast position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -271,6 +276,102 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard="false">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark" id="exampleModalLabel">This is how your post will look like</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body b">
+        <h4 id="jobTitleModal">Prep Cook - The Golf Club at Hawks Prairie (Lacey, WA)</h4>
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+                <div>
+                    <div>The Prep Cook/Dishwasher at The Golf Club at Hawks Prairie's Talon Grill maintains kitchen work areas and restaurant equipment and utensils in a sanitary, clean, and orderly condition. In addition, they assist in preparation of food items needed in the production of the member menu. Desire to learn kitchen cooking skills a must along with attention to detail and the ability to work independently in a team environment.</div>
+                    <div>&nbsp;</div>
+                    <div>
+                        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://images.craigslist.org/00N0N_7oVZSXdzp3J_0ct06l_600x450.jpg"><br><br><strong>ESSENTIAL DUTIES AND RESPONSIBILITIES:</strong><br>
+                        <ul>
+                            <li>Operate the dishwashing machine.</li>
+                            <li>Wash all pots, pans, trays, worktables, walls, refrigerators, and meat blocks.</li>
+                            <li>Sweep and mop kitchen floors.</li>
+                            <li>Separate and remove trash and garbage and place it in designated containers.</li>
+                            <li>Steam clean or wash out garbage cans.</li>
+                            <li>Transfer supplies and equipment between storage and work areas.</li>
+                            <li>Maintain effective communication with fellow team members.</li>
+                            <li>Participate in team safety training.</li>
+                            <li>Ability to stand for long periods of time and work in a hot environment.</li>
+                            <li>Desire to learn kitchen skills and expand food preparation knowledge.</li>
+                        </ul>
+                        <em><strong>QUALIFICATIONS, EDUCATION AND/OR EXPERIENCE:</strong></em><br>
+                        <ol>
+                            <li>High School diploma or GED and related experience.</li>
+                            <li>Must have a Food Handlers Card.</li>
+                        </ol>
+                        <br><span><strong>WORK ENVIRONMENT:</strong></span>
+                    </div>
+                    <div>
+                        <br>The work environment characteristics described here are representative of those a team member encounters while performing the essential functions of this position. Reasonable accommodations may be made to enable individuals with disabilities to perform the essential functions. While performing the duties of this position, the team member must:<br>
+                        <ul style="list-style-type: circle;">
+                            <li>Lift, reach, bend, twist, push, pull, squat, grasp and use arm-hand coordination on a consistent basis</li>
+                            <li>Have the ability to lift up to 50 pounds occasionally</li>
+                        </ul>
+                        <p><strong>BENEFITS AND PERKS:</strong></p>
+                        Oki Golf offers an impressive collection of benefits! Some benefits include:
+                    </div>
+                    <div>
+                        <br>ALL TEAM MEMBERS:<br>
+                        <ol style="list-style-type: lower-alpha;">
+                            <li>Golf benefits for free play, guest passes and visits to all 8 Oki courses.</li>
+                            <li>50% discount on shift meals</li>
+                            <li>25% discount for you and up to four guests (not including alcoholic beverages)</li>
+                            <li>Flexible work environment</li>
+                            <li>401K with company match</li>
+                            <li>Paid sick time</li>
+                            <li>Team Member Referral Program participation and more!</li>
+                        </ol>
+                        <strong><em>FULL-TIME TEAM MEMBERS: (regularly working 35+ hrs/week):</em></strong>
+                    </div>
+                    <div>
+                        <br>
+                        <ol style="list-style-type: lower-roman;">
+                            <li>Medical/dental/vision/telehealth coverage</li>
+                            <li>FSA options</li>
+                            <li>Company paid life insurance and long-term disability</li>
+                            <li>Paid vacation</li>
+                            <li>Holiday pay</li>
+                        </ol>
+                        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://images.craigslist.org/00T0T_9BvEF88gRQP_0x20oM_600x450.jpg"><br>Visit okigolf.com/careers/ to view more information about Oki Golf's history, company culture, and commitment to diversity.
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div><iframe style="display: table; margin-left: auto; margin-right: auto;" src="https://www.youtube.com/embed/CCjdI03MNBQ" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <iframe 
+                class="mapf"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.217340829741!2d73.14523461450075!3d31.463206957111893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922691007ec6de9%3A0xf59745edf853ee2f!2sNational%20Textile%20University%20Masjid!5e0!3m2!1sen!2s!4v1680371096502!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <br>
+                <div class="slot">Compensation: <b>$16 per hour</b></div>
+                <div class="slot">Employment Type: <b>Part Type</b></div>
+                <div class="slot">Job Title: <b>Cook/Dishwasher</b></div>
+            </div>
+        </div>
+      </div>
+      {% comment %} <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> {% endcomment %}
+    </div>
+  </div>
+</div>
+
 
 <script>
 document.getElementById("toastbtn").onclick = function() {
@@ -378,7 +479,8 @@ document.getElementById("toastbtn").onclick = function() {
     const fileInput = document.getElementById('select-image');
     const images = document.getElementById('images');
     const totalImages = document.getElementById('total-images');
-// Listen to the change event on the <input> element
+    var imagesForCarousal= document.getElementById('imagesForCarousal')
+    // Listen to the change event on the <input> element
     fileInput.addEventListener('change', (event) => {
         // Get the selected image file
         const imageFiles = event.target.files;
@@ -396,6 +498,7 @@ document.getElementById("toastbtn").onclick = function() {
 
                 // Convert each image file to a string
                 reader.readAsDataURL(imageFile);
+                console.log(reader)
                 // FileReader will emit the load event when the data URL is ready
                 // Access the string using reader.result inside the callback function
                 reader.addEventListener('load', () => {
@@ -405,6 +508,9 @@ document.getElementById("toastbtn").onclick = function() {
                         <img src='${reader.result}' style="height:100px;width:100px;">
                     </div>
                 `;
+                imagesForCarousal.innerHTML +=`<div class="carousel-item active">
+                    <img src='${reader.result}' class="d-block w-100" alt="..." style="width: 200px; height: 450px;">'
+                    </div>`
                 });
             }
         } else {
@@ -419,3 +525,4 @@ document.getElementById("toastbtn").onclick = function() {
 <script src="{% static 'js/jobs/newJob.js' %}"></script>
 
 {% endblock extra_needed_js %}
+

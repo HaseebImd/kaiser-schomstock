@@ -56,7 +56,7 @@
     <link rel="icon" type="image/x-icon" href="{% static 'images/merica.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/HomePage/Home.css'%}">
   </head>
-  <body>
+  <body class="b">
     <!-- Banner -->
     <div class="banner">
       <div class="banner-icon-wrapper text-left ">
@@ -94,7 +94,7 @@
           <img class='banner-icon' src="{% static 'images/merica.png' %}" alt='american eagle' />
       </div>
     </div>
-
+    
     <!-- Navbar -->
     <nav class='navbar'>
       <ul class='navbar-link-elements'>
@@ -122,7 +122,7 @@
     </nav>
 
     <!-- Main Contents -->
-    <div class='main-layout'>
+    <div class='main-layout b'>
       <div class="left-sidebar">
         <h2 class="leftbar-head">Kaiser's List</h2>
 
@@ -420,37 +420,37 @@
               <div class="single-list-wrapper">
                 <div class="list-part">
                   <ul class="ul-list">
-                    <li><a href="#">Accounting N' Finance</a></li>
-                    <li><a href="#">Admin N' Office</a></li>
-                    <li><a href="#">Arch N' Engineering</a></li>
-                    <li><a href="#">Art , Media , Design</a></li>
-                    <li><a href="#">Biotech , Science</a></li>
-                    <li><a href="#">Business , Management</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Etc , Misc</a></li>
-                    <li><a href="all-jobs">RESTAURANTS AND BARS</a></li>
-                    <li><a href="#">General Labor</a></li>
-                    <li><a href="#">Government</a></li>
-                    <li><a href="#">Human Resources</a></li>
-                    <li><a href="#">Legal , Paralegal</a></li>
-                    <li><a href="#">Manufacturing</a></li>
-                    <li><a href="#">Marketing , PR , Ad</a></li>
-                    <li><a href="#">Medical , Health</a></li>
-                    <li><a href="#">Nonprofit Sector</a></li>
-                    <li><a href="#">Real Estate</a></li>
-                    <li><a href="#">Retail , Wholesale</a></li>
-                    <li><a href="#">Sales , Biz Dev </a></li>
-                    <li><a href="#">Salon , Spa , Fitness</a></li>
-                    <li><a href="#">Security </a></li>
-                    <li><a href="#">Software , QA , DBA</a></li>
-                    <li><a href="#">Skilled Trade , Craft</a></li>
-                    <li><a href="#">Systems Network </a></li>
-                    <li><a href="#">Technical Support</a></li>
-                    <li><a href="#">Transport</a></li>
-                    <li><a href="#">TV , Film , Video</a></li>
-                    <li><a href="#">Web , Info , Design</a></li>
-                    <li><a href="#">Writing , Editing </a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Accounting_N_Finance' %}">Accounting N' Finance</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Admin_N_Office' %}">Admin N' Office</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Arch_N_Engineering' %}">Arch N' Engineering</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Art_Media_Design' %}">Art , Media , Design</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Biotech_Science' %}">Biotech , Science</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Business_Management' %}">Business , Management</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Customer_Service' %}">Customer Service</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Education' %}">Education</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Etc_Misc' %}">Etc , Misc</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='RESTAURANTS_AND_BARS' %}">RESTAURANTS AND BARS</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='General_Labor' %}">General Labor</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Government' %}">Government</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Human_Resources' %}">Human Resources</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Legal_Paralegal' %}">Legal , Paralegal</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Manufacturing' %}">Manufacturing</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Marketing_PR_Ad' %}">Marketing , PR , Ad</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Medical_Health' %}">Medical , Health</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Nonprofit_Sector' %}">Nonprofit Sector</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Real_Estate' %}">Real Estate</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Retail_Wholesale' %}">Retail , Wholesale</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Sales_Biz_Dev' %}">Sales , Biz Dev </a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Salon_Spa_Fitness' %}">Salon , Spa , Fitness</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Security' %}">Security </a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Software_QA_DBA' %}">Software , QA , DBA</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Skilled_Trade_Craft' %}">Skilled Trade , Craft</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Systems_Network' %}">Systems Network </a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Technical_Support' %}">Technical Support</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Transport' %}">Transport</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='TV_Film_Video' %}">TV , Film , Video</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Web_Info_Design' %}">Web , Info , Design</a></li>
+                    <li><a href="{% url 'all-jobs/job-category' jobType='Writing_Editing' %}">Writing , Editing </a></li>
                   </ul>
                 </div>
               </div>

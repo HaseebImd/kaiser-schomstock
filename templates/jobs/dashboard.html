@@ -1,0 +1,39 @@
+{% extends 'jobs/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include "jobs/navbar.html" %}
+
+
+<div class="container mt-3">
+  {% if message %}
+  <div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+  {% endif%}
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Status</th>
+      <th scope="col">Posting Title</th>
+      <th scope="col">Posted Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for job in jobs %}
+        <tr>
+            <th>{{ forloop.counter }}</th>
+            <td>Pending</td>
+            <td><a href={% url 'jobs/job-details' id=job.id %}>{{job.postTitle}}</a></td>
+            <td>{{job.createdat}}</td>
+        </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+
+</div>
+
+
+{% endblock %}
